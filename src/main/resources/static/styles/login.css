@@ -1,0 +1,26 @@
+.mid-section {
+  text-align: center;
+}
+
+.mid-section .section .vertical-align {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.mid-section .section .vertical-align a {
+  margin-top: 15px;
+  float: left;
+}
+
+.mid-section .section .vertical-align .button {
+  float: right;
+}
+
+.mid-section .section .vertical-align .cancel-btn {
+  margin-top:0;
+  float: left;
+}
+/*# sourceMappingURL=login.css.map */

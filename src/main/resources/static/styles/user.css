@@ -1,0 +1,23 @@
+#profile {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#profile h2 {
+    text-align: center;
+    float: unset !important;
+}
+
+a {
+    color: black;
+}
+
+#header img {
+    fill: brown;
+}
+
+.list_item .img-wrapper {
+    float: left;
+    max-height: 70px;
+    overflow: auto;
+}

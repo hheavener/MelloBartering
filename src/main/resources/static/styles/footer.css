@@ -1,0 +1,62 @@
+#footer {
+  color: white;
+  margin-top: 10px;
+}
+
+#footer .links-container {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#555), to(#434343));
+  background-image: linear-gradient(#555, #434343);
+  padding: 20px 0 30px 0;
+  text-align: center;
+}
+
+#footer .links-container .center {
+  margin: auto;
+  display: inline-block;
+  text-align: left;
+}
+
+#footer .links-container .center .links {
+  float: left;
+  font-size: .8em;
+  margin-right: 50px;
+}
+
+#footer .links-container .center .links:last-child {
+  margin-right: 0;
+}
+
+#footer .links-container .center .links h2 {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+#footer .links-container .center .links img {
+  display: inline-block;
+  -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
+  margin-right: 5px;
+  width: 35px;
+}
+
+#footer .links-container .center .block a {
+  color: white;
+  display: block;
+  margin-bottom: 3px;
+  text-decoration: none;
+}
+
+#footer .links-container .center .block a:hover {
+  text-decoration: underline;
+}
+
+#footer p {
+  background-color: #3C3C3C;
+  font-size: .7em;
+  font-weight: 100;
+  padding: 20px 0;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+/*# sourceMappingURL=footer.css.map */

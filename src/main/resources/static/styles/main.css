@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Montserrat', 'sans-serif';
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+  overflow: auto;
+}
+
+.container {
+  text-align: center;
+}
+
+body a {
+  text-decoration: none;
+}
+
+body header {
+  background-image: url("../images/Chalkboard.jpg");
+  background-size: cover;
+  padding: 50px 0;
+  text-align: center;
+}
+
+body header img {
+  width: 250px;
+  -webkit-filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.7));
+          filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.7));
+  transition: all 0.3s ease;
+}
+
+body header img:hover {
+  -webkit-filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 1));
+          filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 1));
+  transition: all 0.3s ease;
+}
+
+body #nav {
+  display: inline-block;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#555), to(#434343));
+  background-image: linear-gradient(#555, #434343);
+}
+
+body #nav .left {
+  float: left;
+}
+
+body #nav .right {
+  float: right;
+}
+
+body #nav a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+
+body #nav .active {
+  /*background-color: #49e3b0;*/
+  background: #333333;
+}
+
+body .mid-section {
+  display: inline-block;
+  margin: 20px 20px 100px;
+}
+
+body .mid-section #filter-container {
+  float: left;
+}
+
+body .mid-section #filters {
+  width: 300px;
+}
+
+body .mid-section #filters .filter {
+  font-weight: 500;
+  font-size: .8em;
+}
+
+body .mid-section #filters .filter label {
+  cursor: pointer;
+}
+
+body .mid-section #filters .filter .filter_name {
+  background-color: white;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0 !important;
+}
+
+body .mid-section #filters .filter .filter_name .status {
+  float: right;
+}
+
+body .mid-section #filters .filter .expandable {
+  padding: 0 20px;
+  margin: 0 !important;
+  background-color: #fdfdfd;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: padding 0.3s, max-height 0.3s ease-in;
+  transition: padding 0.3s, max-height 0.3s ease-in;
+}
+
+body .mid-section #filters .filter .expanded {
+  padding: 20px 20px;
+  -webkit-transition: border-top 3s linear;
+  transition: border-top 3s linear;
+  -webkit-transition: padding 0.3s, max-height 0.3s ease-in;
+  transition: padding 0.3s, max-height 0.3s ease-in;
+}
+
+body .mid-section #main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  float: left;
+  margin-left: 20px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky-nav {
+  position: fixed;
+  z-index: 9999 !important;
+  top: 0;
+  width: 100%;
+}
+
+.sticky-filters {
+  position: fixed;
+  top: 70px;
+  overflow-y: scroll;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky-nav + .mid-section {
+  padding-top: 50px;
+}
+
+@media only screen and (min-width: 1310px) {
+  #main {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+}
+
+.wrapper {
+  display: block;
+}
+
+.section {
+  background-color: white;
+  -webkit-box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 30px 50px;
+  margin: 20px auto;
+  text-align: left;
+  width: 100%;
+}
+
+.text_input {
+  border-radius: 5px;
+  border: 1px solid #707070;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  font-size: .9em;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 10px 10px;
+  width: 100%;
+}
+
+h2 {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: left;
+}
+
+.button {
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: .8em;
+  font-weight: bold;
+  padding: 10px 20px;
+  outline: none;
+}
+
+.button:hover {
+  -webkit-box-shadow: 1px 0px 5px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 0px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.btn-large {
+  font-size: 1em;
+  padding: 15px 40px;
+}
+
+.btn-small {
+  margin-left: 10px;
+  padding: 5px 10px !important;
+}
+
+.link-dark {
+  color: #3C3C3C !important;
+  text-decoration: underline !important;
+}
+
+.link-dark:hover {
+  color: #49BAE3 !important;
+  /*text-decoration: underline !important;*/
+}
+
+.mint {
+  background-color: #49e3b0;
+}
+
+.gray {
+  background-color: #4c4c4c;
+}
+
+.red {
+  background-color: #e34949;
+}
+
+.green {
+  background-color: #20C164;
+}
+
+.blue {
+  background-color: #49BAE3;
+}
+
+.mint-text {
+  color: #49e3b0;
+}
+
+.gray-text {
+  color: #4c4c4c;
+}
+
+.lightgray-text {
+  color: #4c4c4c;
+}
+
+
+.red-text {
+  color: #e34949;
+}
+
+.green-text {
+  color: #20C164;
+}
+
+.blue-text {
+  color: #49BAE3;
+}
+
+.m-l-25 {
+  margin-left: 25px;
+}
+
+.vertical-space-30px {
+  padding: 15px 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.width-1180px {
+  width: 1180px;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+/* =============== Paginated Radio Buttons =============== */
+.toggle-able input[type=radio] {
+  display: none;
+}
+
+.toggle-able label {
+  border: 1px solid #4c4c4c;
+  border-radius: 30px;
+  /*color: white;*/
+  cursor: pointer;
+  font-size: .8em;
+  font-weight: bold;
+  margin-left: 15px;
+  padding: 10px 20px;
+  transition: background 0.4s ease;
+}
+
+.toggle-able input[type=radio]:checked+label {
+  background: #49e3b0;
+  border: 1px solid #49e3b0;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.toggle-able input[type=radio]:checked+label.green-checked {
+  background: #20C164;
+  border: 1px solid #20C164;
+}
+
+.toggle-able input[type=radio]:checked+label.red-checked {
+  background: #e34949;
+  border: 1px solid #e34949;
+}
+
+.toggle-able input[type=radio]:checked+label.blue-checked {
+  background: #49BAE3;
+  border: 1px solid #49BAE3;
+}
+
+.toggle-section {
+  display: none;
+}
+
+
+/*# sourceMappingURL=main.css.map */

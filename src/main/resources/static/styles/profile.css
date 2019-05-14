@@ -1,0 +1,173 @@
+.mid-section {
+  text-align: center;
+}
+
+.mid-section .wrapper {
+  display: inline-block;
+  width: 780px;
+}
+
+.mid-section .section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*.mid-section .section .row {*/
+/*  display: inline-block;*/
+/*}*/
+
+.mid-section #profile h2 {
+  /*display: inline-block;*/
+  float: left;
+}
+
+.mid-section .section #signout {
+  /*text-align: center;*/
+  /*margin-top: 40px;*/
+  float: right;
+}
+
+.mid-section .section .row .profile_pic {
+  text-align: center;
+  border: 1px solid #4c4c4c;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: 20px auto 30px;
+
+  background-image: url("../images/default-user.png");
+  background-position: center;
+  background-size: 200px;
+  background-repeat:no-repeat;
+}
+
+.mid-section .section .row .profile_pic img {
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2);
+  /*float: left;*/
+  /*margin-right: 30px;*/
+  height: 200px;
+  margin-bottom: 30px;
+}
+
+.mid-section .section .row form {
+  float: left;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  /*height: 300px;*/
+}
+
+.mid-section .section .row form .row {
+  /*bottom: 0;*/
+  /*margin-top: 30px;*/
+  /*position: absolute;*/
+  width: 100%;
+}
+
+.mid-section .section .row form .row a {
+  float: left;
+  font-size: .8em;
+  padding-top: 10px;
+}
+
+.mid-section .section .row form .row .button {
+  float: right;
+  margin-top: 10px !important;
+}
+
+.mid-section #my_items, .mid-section #small_sections {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mid-section #my_items .section, .mid-section #small_sections .section {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+}
+
+.mid-section #my_items .list_item .details, .mid-section #small_sections .list_item .details {
+  float: left;
+  margin-left: 30px;
+  text-align: left;
+}
+
+.mid-section #my_items .list_item .details h3, .mid-section #my_items .list_item .details p, .mid-section #small_sections .list_item .details h3, .mid-section #small_sections .list_item .details p {
+  margin: 0;
+}
+
+.mid-section #my_items .list_item .details h3, .mid-section #small_sections .list_item .details h3 {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.mid-section #my_items .list_item .details p, .mid-section #small_sections .list_item .details p {
+  color: #4c4c4c;
+  font-size: .8em;
+}
+
+.mid-section #my_items .list_item .actions, .mid-section #small_sections .list_item .actions {
+  float: right;
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 20px);
+}
+
+.mid-section #my_items .list_item .actions img {
+  height: 20px;
+}
+
+.mid-section #my_items .list_item .actions button {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  cursor: pointer;
+  height: 40px;
+  padding: 0;
+  width: 40px;
+  transition: box-shadow .2s ease;
+}
+
+.undo-delete {
+  background: #e34949 !important;
+  border-radius: 30px !important;
+  height: unset !important;
+  margin-top: 8px;
+  width: unset !important;
+
+}
+
+
+
+/*.edit:hover {*/
+/*  -webkit-box-shadow: 0 0px 0px 1px rgba(73, 186, 227, 1);*/
+/*          box-shadow: 0 0px 0px 1px rgba(73, 186, 227, 1);*/
+/*  transition: box-shadow .2s ease;*/
+/*}*/
+
+/*.delete:hover {*/
+/*  -webkit-box-shadow: 0 0px 0px 1px rgba(227, 73, 73, 1);*/
+/*          box-shadow: 0 0px 0px 1px rgba(227, 73, 73, 1);*/
+/*  transition: box-shadow .2s ease;*/
+/*}*/
+
+#add_new_btn {
+  margin-top: 20px;
+}
+
+
+#my_items::before {
+  display: block;
+  content: " ";
+  margin-top: -150px;
+  height: 150px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=profile.css.map */
