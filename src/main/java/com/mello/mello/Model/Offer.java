@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 public class Offer implements Serializable {
 
     private static final long serialVersionUID = 6529685098267757690L;
+
     public static final String ACCEPTED = "accepted";
     public static final String REJECTED = "rejected";
     public static final String WITHDRAWN = "withdrawn";
@@ -41,7 +42,6 @@ public class Offer implements Serializable {
     private @NotNull int receiverItemId;
 
 
-
     public Offer() {
         this.sender = new User();
         this.receiver = new User();
@@ -59,8 +59,8 @@ public class Offer implements Serializable {
      * Offer for one-on-one trades.
      * @param sender User sending the offer
      * @param receiver User receiving the offer
-     * @param senderItemId
-     * @param receiverItemId
+     * @param senderItemId id of the Item belonging to the sender
+     * @param receiverItemId id of the Item belonging to the receiver
      */
     public Offer(User sender, User receiver, int senderItemId, int receiverItemId) {
         this.sender = sender;
