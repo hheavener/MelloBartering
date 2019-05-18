@@ -42,7 +42,7 @@
                                 <button type="button"
                                         class="button gray"
                                         style="margin-left: 0 !important;"
-                                        onclick="window.location.href='${contextPath}/users/${item.owner.username}'">
+                                        onclick="window.location.href='<c:out value="${contextPath}/users/${item.owner.username}"/>'">
                                     <span>More from this user</span>
                                 </button>
                             </form>
@@ -59,7 +59,7 @@
                                     <p><a href="${contextPath}/login" class="mint-text"><strong>Sign in</strong></a> to make an offer.</p>
                                 </c:when>
                                 <c:when test="${empty user.availableItems}">
-                                    <p><a href="${contextPath}/users/${user.username}/items/new" class="blue-text">Add an item</a> to make an offer.</p>
+                                    <p><a href="<c:out value="${contextPath}/users/${user.username}/items/new"/>" class="blue-text">Add an item</a> to make an offer.</p>
                                 </c:when>
                                 <c:when test="${item.available == false}">
                                     <p>Offer not allowed.</p>
@@ -69,7 +69,7 @@
                                     <c:out value="${message}"/>
                                     <form action="${contextPath}/offers/new" method="POST">
                                         <c:forEach items="${user.availableItems}" var="user_item" varStatus="loop">
-                                            <label for="${user_item.id}" class="pointer">
+                                            <label for="<c:out value="${user_item.id}"/>" class="pointer">
                                                 <div class="section list_item">
                                                     <div class="no-margin img-wrapper">
                                                         <img src="<c:out value='${user_item.image_url}'/>" class="item_img">
@@ -85,8 +85,8 @@
                                                             <c:when test="${user.doesNotHaveOfferWith(user_item.id, item.id)}">
                                                                 <input type="radio"
                                                                        name="sender_item"
-                                                                       id="${user_item.id}"
-                                                                       value="${user_item.id}"
+                                                                       id="<c:out value="${user_item.id}"/>"
+                                                                       value="<c:out value="${user_item.id}"/>"
                                                                        class="checkbox" ${loop.count == 1 ? 'checked' : ''}>
                                                             </c:when>
                                                             <c:otherwise>

@@ -21,7 +21,7 @@
                     <div class="row">
                         <form action="${contextPath}/login" method="post">
                             <label for="user_id">User ID</label>
-                            <input type="text" value="${user_id}" id="user_id" name="user_id" class="text_input" placeholder="Username or email" autofocus>
+                            <input type="text" value="<c:out value="${user_id}"/>" id="user_id" name="user_id" class="text_input" placeholder="Username or email" autofocus>
                             <label for="password">Password</label>
                             <input type="password" id="password" name="password" class="text_input" placeholder="Password">
                             <div class="row">
