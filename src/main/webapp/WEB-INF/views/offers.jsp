@@ -42,24 +42,24 @@
                                 <c:forEach items="${user.sent}" var="offer" varStatus="loop">
                                 <c:if test="${loop.count > 1}"><hr class="row-break"></c:if>
                                 <div class="row">
-                                    <a href="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}">
+                                    <a href="<c:out value="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}"/>">
                                         <figure>
                                             <img src="<c:out value='${offer.senderItem.image_url}'/>" class="prod_img">
                                             <figcaption>
-                                                <p class="item_name">${offer.senderItem.name}</p>
-                                                <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.senderItem.owner.location}</p>
+                                                <p class="item_name"><c:out value="${offer.senderItem.name}"/></p>
+                                                <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.senderItem.owner.location}"/></p>
                                             </figcaption>
                                         </figure>
                                     </a>
                                     <div class="arrow">
                                         <img src="svg/Arrow.svg">
                                     </div>
-                                    <a href="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}">
+                                    <a href="<c:out value="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}"/>">
                                         <figure>
                                             <img src="<c:out value='${offer.receiverItem.image_url}'/>" class="prod_img">
                                             <figcaption>
-                                                <p class="item_name">${offer.receiverItem.name}</p>
-                                                <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.receiverItem.owner.location}</p>
+                                                <p class="item_name"><c:out value="${offer.receiverItem.name}"/></p>
+                                                <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.receiverItem.owner.location}"/></p>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -80,7 +80,7 @@
                                         <form action="#" method="POST">
                                             <button type="submit" id="withdraw-offer-button"
                                                     class="button blue confirm-action"
-                                                    formaction="${contextPath}/offers/${offer.id}/withdraw">Withdraw</button>
+                                                    formaction="<c:out value="${contextPath}/offers/${offer.id}/withdraw"/>">Withdraw</button>
                                         </form>
                                     </div>
                                 </div>
@@ -107,24 +107,24 @@
                                 <c:forEach items="${user.received}" var="offer" varStatus="loop">
                                 <c:if test="${loop.count > 1}"><hr class="row-break"></c:if>
                                 <div class="row">
-                                    <a href="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}">
+                                    <a href="<c:out value="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}"/>">
                                         <figure>
-                                            <img src="${offer.senderItem.image_url}" class="prod_img">
+                                            <img src="<c:out value="${offer.senderItem.image_url}"/>" class="prod_img">
                                             <figcaption>
-                                                <p class="item_name">${offer.senderItem.name}</p>
-                                                <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.senderItem.owner.location}</p>
+                                                <p class="item_name"><c:out value="${offer.senderItem.name}"/></p>
+                                                <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.senderItem.owner.location}"/></p>
                                             </figcaption>
                                         </figure>
                                     </a>
                                     <div class="arrow">
                                         <img src="svg/Arrow.svg">
                                     </div>
-                                    <a href="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}">
+                                    <a href="<c:out value="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}"/>">
                                         <figure>
-                                            <img src="${offer.receiverItem.image_url}" class="prod_img">
+                                            <img src="<c:out value="${offer.receiverItem.image_url}"/>" class="prod_img">
                                             <figcaption>
-                                                <p class="item_name">${offer.receiverItem.name}</p>
-                                                <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.receiverItem.owner.location}</p>
+                                                <p class="item_name"><c:out value="${offer.receiverItem.name}"/></p>
+                                                <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.receiverItem.owner.location}"/></p>
                                             </figcaption>
                                         </figure>
                                     </a>
@@ -133,21 +133,21 @@
                                         <hr>
                                         <h4 style="font-weight: bold;">Received:</h4>
                                         <p>From:
-                                            <a href="${contextPath}/users/<c:out value='${offer.sender.username}'/>" class="blue-text">
+                                            <a href="<c:out value="${contextPath}/users/${offer.sender.username}"/>" class="blue-text">
                                                 <c:out value="${offer.sender.fullName}"/>
                                             </a>
                                         </p>
-                                        <p>${offer.getFormattedDate(offer.offerDate)}</p>
-                                        <p class="subtext">${offer.getTimeElapsed(offer.offerDate)}</p>
+                                        <p><c:out value="${offer.getFormattedDate(offer.offerDate)}"/></p>
+                                        <p class="subtext"><c:out value="${offer.getTimeElapsed(offer.offerDate)}"/></p>
                                         <h4>Status:</h4>
-                                        <p>You viewed this:<br>${offer.getFormattedDate(offer.moment_viewed)}</p>
+                                        <p>You viewed this:<br><c:out value="${offer.getFormattedDate(offer.moment_viewed)}"/></p>
                                         <form action="#" method="POST">
                                             <button type="submit" id="accept-offer-button"
                                                     class="button green confirm-action"
-                                                    formaction="${contextPath}/offers/${offer.id}/accept">Accept</button>
+                                                    formaction="<c:out value="${contextPath}/offers/${offer.id}/accept"/>">Accept</button>
                                             <button type="submit" id="decline-offer-button"
                                                     class="button red m-l-25 confirm-action"
-                                                    formaction="${contextPath}/offers/${offer.id}/decline">Decline</button>
+                                                    formaction="<c:out value="${contextPath}/offers/${offer.id}/decline"/>">Decline</button>
                                         </form>
                                     </div>
                                 </div>
@@ -189,12 +189,12 @@
                                         <div class="row">
 
                                                 <%-- Sender item --%>
-                                            <a href="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}">
+                                            <a href="<c:out value="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}"/>">
                                                 <figure>
-                                                    <img src="${offer.senderItem.image_url}" class="prod_img">
+                                                    <img src="<c:out value="${offer.senderItem.image_url}"/>" class="prod_img">
                                                     <figcaption>
-                                                        <p class="item_name">${offer.senderItem.name}</p>
-                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.senderItem.owner.location}</p>
+                                                        <p class="item_name"><c:out value="${offer.senderItem.name}"/></p>
+                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.senderItem.owner.location}"/></p>
                                                     </figcaption>
                                                 </figure>
                                             </a>
@@ -205,12 +205,12 @@
                                             </div>
 
                                                 <%-- Receiver item --%>
-                                            <a href="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}">
+                                            <a href="<c:out value="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}"/>">
                                                 <figure>
-                                                    <img src="${offer.receiverItem.image_url}" class="prod_img">
+                                                    <img src="<c:out value="${offer.receiverItem.image_url}"/>" class="prod_img">
                                                     <figcaption>
-                                                        <p class="item_name">${offer.receiverItem.name}</p>
-                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.receiverItem.owner.location}</p>
+                                                        <p class="item_name"><c:out value="${offer.receiverItem.name}"/></p>
+                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.receiverItem.owner.location}"/></p>
                                                     </figcaption>
                                                 </figure>
                                             </a>
@@ -226,22 +226,22 @@
                                                     <c:choose>
                                                         <c:when test="${user.receivedOffer(offer.id)}">
                                                             From:
-                                                            <a href="${contextPath}/users/<c:out value='${offer.sender.username}'/>" class="subtext link-dark">
+                                                            <a href="<c:out value="${contextPath}/users/${offer.sender.username}"/>" class="subtext link-dark">
                                                                 <c:out value="${offer.sender.fullName}"/>
                                                             </a>
                                                         </c:when>
                                                         <c:otherwise>
                                                             To:
-                                                            <a href="${contextPath}/users/<c:out value='${offer.receiver.username}'/>" class="subtext link-dark">
+                                                            <a href="<c:out value="${contextPath}/users/${offer.receiver.username}"/>" class="subtext link-dark">
                                                                 <c:out value="${offer.receiver.fullName}"/>
                                                             </a>
                                                         </c:otherwise>
                                                     </c:choose>
                                                 </p>
                                                     <%-- Date offered --%>
-                                                <p class="subtext" style="color: #4c4c4c;">${offer.getFormattedDate(offer.offerDate)}</p>
+                                                <p class="subtext" style="color: #4c4c4c;"><c:out value="${offer.getFormattedDate(offer.offerDate)}"/></p>
                                                     <%-- Time since offer --%>
-                                                <p class="subtext">${offer.getTimeElapsed(offer.offerDate)}</p>
+                                                <p class="subtext"><c:out value="${offer.getTimeElapsed(offer.offerDate)}"/></p>
 
                                                 <h4>Status:</h4>
                                                 <p class="subtext" style="color:#20C164;">
@@ -273,12 +273,12 @@
                                         <div class="row">
 
                                                 <%-- Sender item --%>
-                                            <a href="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}">
+                                            <a href="<c:out value="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}"/>">
                                                 <figure>
-                                                    <img src="${offer.senderItem.image_url}" class="prod_img">
+                                                    <img src="<c:out value="${offer.senderItem.image_url}"/>" class="prod_img">
                                                     <figcaption>
-                                                        <p class="item_name">${offer.senderItem.name}</p>
-                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.senderItem.owner.location}</p>
+                                                        <p class="item_name"><c:out value="${offer.senderItem.name}"/></p>
+                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.senderItem.owner.location}"/></p>
                                                     </figcaption>
                                                 </figure>
                                             </a>
@@ -289,12 +289,12 @@
                                             </div>
 
                                                 <%-- Receiver item --%>
-                                            <a href="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}">
+                                            <a href="<c:out value="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}"/>">
                                                 <figure>
-                                                    <img src="${offer.receiverItem.image_url}" class="prod_img">
+                                                    <img src="<c:out value="${offer.receiverItem.image_url}"/>" class="prod_img">
                                                     <figcaption>
-                                                        <p class="item_name">${offer.receiverItem.name}</p>
-                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.receiverItem.owner.location}</p>
+                                                        <p class="item_name"><c:out value="${offer.receiverItem.name}"/></p>
+                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.receiverItem.owner.location}"/></p>
                                                     </figcaption>
                                                 </figure>
                                             </a>
@@ -310,22 +310,22 @@
                                                     <c:choose>
                                                         <c:when test="${user.receivedOffer(offer.id)}">
                                                             From:
-                                                            <a href="${contextPath}/users/<c:out value='${offer.sender.username}'/>" class="subtext link-dark">
+                                                            <a href="<c:out value="${contextPath}/users/${offer.sender.username}"/>" class="subtext link-dark">
                                                                 <c:out value="${offer.sender.fullName}"/>
                                                             </a>
                                                         </c:when>
                                                         <c:otherwise>
                                                             To:
-                                                            <a href="${contextPath}/users/<c:out value='${offer.receiver.username}'/>" class="subtext link-dark">
+                                                            <a href="<c:out value="${contextPath}/users/${offer.receiver.username}"/>" class="subtext link-dark">
                                                                 <c:out value="${offer.receiver.fullName}"/>
                                                             </a>
                                                         </c:otherwise>
                                                     </c:choose>
                                                 </p>
                                                     <%-- Date offered --%>
-                                                <p class="subtext" style="color: #4c4c4c;">${offer.getFormattedDate(offer.offerDate)}</p>
+                                                <p class="subtext" style="color: #4c4c4c;"><c:out value="${offer.getFormattedDate(offer.offerDate)}"/></p>
                                                     <%-- Time since offer --%>
-                                                <p class="subtext">${offer.getTimeElapsed(offer.offerDate)}</p>
+                                                <p class="subtext"><c:out value="${offer.getTimeElapsed(offer.offerDate)}"/></p>
 
                                                 <h4>Status:</h4>
                                                 <p class="subtext undo" style="color:#e34949;">
@@ -335,7 +335,7 @@
                                                                 <button type="submit"
                                                                         form="undo-delete"
                                                                         formmethod="post"
-                                                                        formaction="${contextPath}/offers/${offer.id}/undo/decline"
+                                                                        formaction="<c:out value="${contextPath}/offers/${offer.id}/undo/decline"/>"
                                                                         class="button btn-small red">Undo</button>
                                                             </span>
                                                     </c:if>
@@ -367,12 +367,12 @@
                                     <c:forEach items="${withdrawn}" var="offer" varStatus="loop">
                                         <div class="row">
                                                 <%-- Sender item --%>
-                                            <a href="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}">
+                                            <a href="<c:out value="${contextPath}/users/${offer.sender.username}/items/${offer.senderItem.urlValue}"/>">
                                                 <figure>
-                                                    <img src="${offer.senderItem.image_url}" class="prod_img">
+                                                    <img src="<c:out value="${offer.senderItem.image_url}"/>" class="prod_img">
                                                     <figcaption>
-                                                        <p class="item_name">${offer.senderItem.name}</p>
-                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.senderItem.owner.location}</p>
+                                                        <p class="item_name"><c:out value="${offer.senderItem.name}"/></p>
+                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.senderItem.owner.location}"/></p>
                                                     </figcaption>
                                                 </figure>
                                             </a>
@@ -383,12 +383,12 @@
                                             </div>
 
                                                 <%-- Receiver item --%>
-                                            <a href="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}">
+                                            <a href="<c:out value="${contextPath}/users/${offer.receiver.username}/items/${offer.receiverItem.urlValue}"/>">
                                                 <figure>
-                                                    <img src="${offer.receiverItem.image_url}" class="prod_img">
+                                                    <img src="<c:out value="${offer.receiverItem.image_url}"/>" class="prod_img">
                                                     <figcaption>
-                                                        <p class="item_name">${offer.receiverItem.name}</p>
-                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon">${offer.receiverItem.owner.location}</p>
+                                                        <p class="item_name"><c:out value="${offer.receiverItem.name}"/></p>
+                                                        <p class="item_location"><img src="images/location.svg" class="loc_icon"><c:out value="${offer.receiverItem.owner.location}"/></p>
                                                     </figcaption>
                                                 </figure>
                                             </a>
@@ -404,22 +404,22 @@
                                                     <c:choose>
                                                         <c:when test="${user.receivedOffer(offer.id)}">
                                                             From:
-                                                            <a href="${contextPath}/users/<c:out value='${offer.sender.username}'/>" class="subtext link-dark">
+                                                            <a href="<c:out value="${contextPath}/users/${offer.sender.username}"/>" class="subtext link-dark">
                                                                 <c:out value="${offer.sender.fullName}"/>
                                                             </a>
                                                         </c:when>
                                                         <c:otherwise>
                                                             To:
-                                                            <a href="${contextPath}/users/<c:out value='${offer.receiver.username}'/>" class="subtext link-dark">
+                                                            <a href="<c:out value="${contextPath}/users/${offer.receiver.username}"/>" class="subtext link-dark">
                                                                 <c:out value="${offer.receiver.fullName}"/>
                                                             </a>
                                                         </c:otherwise>
                                                     </c:choose>
                                                 </p>
                                                     <%-- Date offered --%>
-                                                <p class="subtext" style="color: #4c4c4c;">${offer.getFormattedDate(offer.offerDate)}</p>
+                                                <p class="subtext" style="color: #4c4c4c;"><c:out value="${offer.getFormattedDate(offer.offerDate)}"/></p>
                                                     <%-- Time since offer --%>
-                                                <p class="subtext">${offer.getTimeElapsed(offer.offerDate)}</p>
+                                                <p class="subtext"><c:out value="${offer.getTimeElapsed(offer.offerDate)}"/></p>
 
                                                 <h4>Status:</h4>
                                                 <p class="subtext undo" style="color:#49BAE3;">
@@ -429,7 +429,7 @@
                                                                 <button type="submit"
                                                                         form="undo-withdraw"
                                                                         formmethod="post"
-                                                                        formaction="${contextPath}/offers/${offer.id}/undo/withdraw"
+                                                                        formaction="<c:out value="${contextPath}/offers/${offer.id}/undo/withdraw"/>"
                                                                         class="button btn-small blue">Undo</button>
                                                             </span>
                                                     </c:if>

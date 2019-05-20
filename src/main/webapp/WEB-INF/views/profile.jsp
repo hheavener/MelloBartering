@@ -61,27 +61,27 @@
 
                                     <%--First Name--%>
                                     <label for="f_name">First name:</label>
-                                    <input type="text" value="${user.firstName}" id="f_name" name="f_name" class="text_input" placeholder="Ex: John">
+                                    <input type="text" value="<c:out value="${user.firstName}"/>" id="f_name" name="f_name" class="text_input" placeholder="Ex: John">
 
                                     <%--Last Name--%>
                                     <label for="l_name">Last name:</label>
-                                    <input type="text" value="${user.lastName}" id="l_name" name="l_name" class="text_input" placeholder="Ex: Appleseed">
+                                    <input type="text" value="<c:out value="${user.lastName}"/>" id="l_name" name="l_name" class="text_input" placeholder="Ex: Appleseed">
 
                                     <%--Username--%>
                                     <label for="username">Username:</label>
-                                    <input type="text" value="${user.userLogin.username}" id="username" name="username" class="text_input" placeholder="Ex: jappleseed">
+                                    <input type="text" value="<c:out value="${user.userLogin.username}"/>" id="username" name="username" class="text_input" placeholder="Ex: jappleseed">
 
                                     <%--Email--%>
                                     <label for="email">Email:</label>
-                                    <input type="email" value="${user.userLogin.email}" id="email" name="email" class="text_input" placeholder="Ex: jappleseed@gmail.com">
+                                    <input type="email" value="<c:out value="${user.userLogin.email}"/>" id="email" name="email" class="text_input" placeholder="Ex: jappleseed@gmail.com">
 
                                     <%--Location--%>
                                     <label for="location">Location:</label>
-                                    <input type="text" value="${user.location}" id="location" name="location" class="text_input" placeholder="Ex: Charlotte, NC">
+                                    <input type="text" value="<c:out value="${user.location}"/>" id="location" name="location" class="text_input" placeholder="Ex: Charlotte, NC">
 
                                     <%--Image url--%>
                                     <label for="user-img-url">Image url:</label>
-                                    <input type="text" value="${user.imageUrl}" id="user-img-url" name="user-img-url" class="text_input" placeholder="Ex: https://www.website.com/url-to-my-image">
+                                    <input type="text" value="<c:out value="${user.imageUrl}"/>" id="user-img-url" name="user-img-url" class="text_input" placeholder="Ex: https://www.website.com/url-to-my-image">
 
                                     <%--Change password / save changes--%>
                                     <div class="row">
@@ -164,12 +164,12 @@
                                             <div class="actions">
                                                 <form action="" method="post">
                                                     <button type="submit"
-                                                            formaction="${contextPath}/users/${user.username}/items/${user_item.urlValue}/edit"
+                                                            formaction="<c:out value="${contextPath}/users/${user.username}/items/${user_item.urlValue}/edit"/>"
                                                             class="edit">
                                                         <img src="${contextPath}/images/edit.png" alt="Edit" title="Edit details" style="height: 20px !important;">
                                                     </button>
                                                     <button type="submit" id="delete-item-button"
-                                                            formaction="${contextPath}/users/${user.username}/items/${user_item.urlValue}/delete"
+                                                            formaction="<c:out value="${contextPath}/users/${user.username}/items/${user_item.urlValue}/delete"/>"
                                                             class="delete confirm-action">
                                                         <img src="${contextPath}/svg/delete.svg" alt="Delete" title="Remove this item" style="height: 20px !important;">
                                                     </button>
@@ -191,7 +191,7 @@
                                     <c:forEach items="${user.unavailableItems}" var="user_item">
                                         <%--Loop--%>
                                         <div class="section list_item">
-                                            <a href="${contextPath}/users/<c:out value='${user.userLogin.username}'/>/items/<c:out value='${user_item.urlValue}'/>">
+                                            <a href="<c:out value="${contextPath}/users/${user.userLogin.username}/items/${user_item.urlValue}"/>">
                                                 <div class="no-margin img-wrapper">
                                                     <img src="<c:out value='${user_item.image_url}'/>" class="item_img">
                                                 </div>
@@ -206,12 +206,12 @@
                                                 <form action="#" method="post">
                                                     <c:if test="${user_item.isDeletedByUser()}">
                                                         <button type="submit"
-                                                                formaction="${contextPath}/users/${user.username}/items/${user_item.urlValue}/undo-delete"
+                                                                formaction="<c:out value="${contextPath}/users/${user.username}/items/${user_item.urlValue}/undo-delete"/>"
                                                                 class="undo-delete-img button btn-small">
                                                             <img src="${contextPath}/svg/undo.svg" alt="Undo" title="Restore this item" style="height: 20px !important;">
                                                         </button>
                                                         <button type="submit" id="perm-delete-item-button"
-                                                                formaction="${contextPath}/users/${user.username}/items/${user_item.urlValue}/perm-delete"
+                                                                formaction="<c:out value="${contextPath}/users/${user.username}/items/${user_item.urlValue}/perm-delete"/>"
                                                                 class="undo-delete-img button btn-small confirm-action">
                                                             <img src="${contextPath}/svg/delete.svg" alt="Undo" title="Permanently delete this item" style="height: 20px !important;">
                                                         </button>
@@ -226,7 +226,7 @@
 
                         <%--Add a new item / edit an existing item--%>
                         <div id="_item" class="row toggle-section text-align-left ${edit_item or show_add_item ? 'toggle-initial' : ''}">
-                            <form id="edit-item-form" action="${contextPath}/users/${user.username}/items/${edit_item ? item.urlValue+='/save' : 'add'}" method="post">
+                            <form id="edit-item-form" action="<c:out value="${contextPath}/users/${user.username}/items/${edit_item ? item.urlValue+='/save' : 'add'}"/>" method="post">
 
                                 <c:if test="${item_error != null}">
                                     <p class="red-text" style="margin:0 0 30px;"><c:out value="${item_error}"/></p>
@@ -234,7 +234,7 @@
 
                                 <%--Name--%>
                                 <label for="name">Name of item:</label>
-                                <input type="text" value="${item.name}" id="name" name="name" class="text_input" placeholder="Ex: Magical Instruments - MI Guitar">
+                                <input type="text" value="<c:out value="${item.name}"/>" id="name" name="name" class="text_input" placeholder="Ex: Magical Instruments - MI Guitar">
 
                                 <%--Condition--%>
                                 <label>Condition:</label>
@@ -248,11 +248,11 @@
 
                                 <%--Categories--%>
                                 <label for="categories">Categories:</label>
-                                <input type="text" value="${item.categories}" id="categories" name="categories" class="text_input" placeholder="Ex: Music, Technology, Audio">
+                                <input type="text" value="<c:out value="${item.categories}"/>" id="categories" name="categories" class="text_input" placeholder="Ex: Music, Technology, Audio">
 
                                 <%--Image url--%>
                                 <label for="image_url">Url to image:</label>
-                                <input type="text" value="${item.image_url}" id="image_url" name="image_url" class="text_input" placeholder="Ex: https://www.website.com/url-to-my-image">
+                                <input type="text" value="<c:out value="${item.image_url}"/>" id="image_url" name="image_url" class="text_input" placeholder="Ex: https://www.website.com/url-to-my-image">
 
                                 <%--Save--%>
                                 <div class="row">
@@ -273,7 +273,7 @@
                 <%--Delete account--%>
                 <div id="small_sections">
                     <section class="section">
-                        <a href="${contextPath}/users/${user.username}" class="blue-text">View public profile</a>
+                        <a href="<c:out value="${contextPath}/users/${user.username}"/>" class="blue-text">View public profile</a>
                     </section>
                     <section class="section">
                         <a href="" class="red-text">Delete my account</a>
